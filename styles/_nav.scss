@@ -1,2 +1,180 @@
 .nav {
+  background-color: $black;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+
+  width: 5%;
+  min-height: 35px;
+  height: 100%;
+
+  &__logo {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    width: 5%;
+    padding: 1vw;
+  }
+
+  &__arrow {
+    width: 1vw;
+    height: auto;
+    opacity: 0;
+    transition: transform 0.25s ease-in-out, opacity 0.25s step-end;
+  }
+
+  &__links {
+    width: 100%;
+    height: 100vh;
+
+    li {
+      p {
+        display: none;
+
+        font-size: 5vw;
+        line-height: 15vh;
+        color: $white;
+
+        transition: color 0.25s ease-in-out;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+        padding: 1vw;
+      }
+
+      svg {
+        path,
+        circle {
+          fill: $white;
+          transition: fill 0.25s ease-in-out;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        p {
+          color: $blue-hover;
+        }
+
+        svg {
+          path,
+          circle {
+            fill: $blue-hover;
+          }
+        }
+      }
+    }
+
+    .active-link,
+    .active-link:hover {
+      p {
+        color: $blue-highlight;
+      }
+
+      svg {
+        path,
+        circle {
+          fill: $blue-highlight;
+        }
+      }
+    }
+  }
+
+  &__burg {
+    cursor: pointer;
+    display: none;
+    position: relative;
+    top: 0;
+    right: 1vw;
+    float: right;
+    height: 100%;
+
+    span {
+      background-color: $white;
+      display: block;
+
+      width: 25px;
+      height: 5px;
+
+      transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out,
+        background-color 0.25s ease-in-out;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 100%;
+    height: 5%;
+
+    &__links {
+      display: none;
+    }
+
+    &__logo {
+      width: auto;
+      height: 5%;
+      padding: 0.5vh 1vw;
+    }
+
+    &__burg {
+      display: flex;
+    }
+  }
+
+  .menu-mobile {
+    background-color: $black;
+    display: block;
+
+    width: 100vw;
+    height: 100vh;
+
+    li {
+      margin-left: 50%;
+      transform: translateX(-50%);
+
+      display: flex;
+      justify-content: left;
+
+      p {
+        padding-left: 5vw;
+        display: block;
+      }
+
+      svg {
+        padding: 0;
+        width: 15%;
+      }
+    }
+  }
+}
+
+// animation
+.burg-animation {
+  span {
+    background-color: $blue-highlight;
+  }
+
+  :first-child {
+    transform: rotate(135deg) translate(8px, -8px);
+  }
+
+  :nth-child(2) {
+    transform: translateX(25px);
+    opacity: 0;
+  }
+
+  :last-child {
+    transform: rotate(-135deg) translate(6px, 7px);
+  }
 }

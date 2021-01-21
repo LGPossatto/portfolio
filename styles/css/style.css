@@ -12,7 +12,11 @@ body {
   background-color: #fafafa;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+body {
+  font-size: 62.5%;
 }
 
 a {
@@ -21,5 +25,218 @@ a {
 
 li {
   list-style: none;
+}
+
+.container {
+  margin: 0 7.5vw;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-fdc {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-aic {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-jcc {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jcsb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-jcse {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.nav {
+  background-color: #101010;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 5%;
+  min-height: 35px;
+  height: 100%;
+}
+
+.nav__logo {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 5%;
+  padding: 1vw;
+}
+
+.nav__arrow {
+  width: 1vw;
+  height: auto;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s step-end, -webkit-transform 0.25s ease-in-out;
+  transition: opacity 0.25s step-end, -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, opacity 0.25s step-end;
+  transition: transform 0.25s ease-in-out, opacity 0.25s step-end, -webkit-transform 0.25s ease-in-out;
+}
+
+.nav__links {
+  width: 100%;
+  height: 100vh;
+}
+
+.nav__links li p {
+  display: none;
+  font-size: 5vw;
+  line-height: 15vh;
+  color: #fafafa;
+  -webkit-transition: color 0.25s ease-in-out;
+  transition: color 0.25s ease-in-out;
+}
+
+.nav__links li svg {
+  width: 100%;
+  height: auto;
+  padding: 1vw;
+}
+
+.nav__links li svg path,
+.nav__links li svg circle {
+  fill: #fafafa;
+  -webkit-transition: fill 0.25s ease-in-out;
+  transition: fill 0.25s ease-in-out;
+}
+
+.nav__links li:hover {
+  cursor: pointer;
+}
+
+.nav__links li:hover p {
+  color: #85e3ff;
+}
+
+.nav__links li:hover svg path,
+.nav__links li:hover svg circle {
+  fill: #85e3ff;
+}
+
+.nav__links .active-link p,
+.nav__links .active-link:hover p {
+  color: #00c2ff;
+}
+
+.nav__links .active-link svg path,
+.nav__links .active-link svg circle,
+.nav__links .active-link:hover svg path,
+.nav__links .active-link:hover svg circle {
+  fill: #00c2ff;
+}
+
+.nav__burg {
+  cursor: pointer;
+  display: none;
+  position: relative;
+  top: 0;
+  right: 1vw;
+  float: right;
+  height: 100%;
+}
+
+.nav__burg span {
+  background-color: #fafafa;
+  display: block;
+  width: 25px;
+  height: 5px;
+  -webkit-transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, background-color 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+.nav__burg span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 100%;
+    height: 5%;
+  }
+  .nav__links {
+    display: none;
+  }
+  .nav__logo {
+    width: auto;
+    height: 5%;
+    padding: 0.5vh 1vw;
+  }
+  .nav__burg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .menu-mobile {
+    background-color: #101010;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+  .menu-mobile li {
+    margin-left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  .menu-mobile li p {
+    padding-left: 5vw;
+    display: block;
+  }
+  .menu-mobile li svg {
+    padding: 0;
+    width: 15%;
+  }
+}
+
+.burg-animation span {
+  background-color: #00c2ff;
+}
+
+.burg-animation :first-child {
+  -webkit-transform: rotate(135deg) translate(8px, -8px);
+          transform: rotate(135deg) translate(8px, -8px);
+}
+
+.burg-animation :nth-child(2) {
+  -webkit-transform: translateX(25px);
+          transform: translateX(25px);
+  opacity: 0;
+}
+
+.burg-animation :last-child {
+  -webkit-transform: rotate(-135deg) translate(6px, 7px);
+          transform: rotate(-135deg) translate(6px, 7px);
 }
 /*# sourceMappingURL=style.css.map */
