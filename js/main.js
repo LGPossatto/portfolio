@@ -16,9 +16,7 @@ const linkStyle = (e) => {
   const childrenList = navLinks.children;
 
   for (let child of childrenList) {
-    if (child.classList.contains("active-link")) {
-      child.classList.remove("active-link");
-    }
+    child.classList.remove("active-link");
   }
 
   let elementLink = navLinks.firstElementChild;
@@ -33,6 +31,12 @@ const linkStyle = (e) => {
 
   window.addEventListener("resize", () => {
     arrowStyle(elementLink);
+
+    if (window.innerWidth > 768) {
+      navLinks.classList.add("menu-mobile-aux");
+    } else if (window.innerWidth < 768) {
+      navLinks.classList.remove("menu-mobile-aux");
+    }
   });
 };
 
@@ -52,7 +56,7 @@ const navBurg = document.querySelector("#nav-burg");
 
 const burgStyle = () => {
   navBurg.classList.toggle("burg-animation");
-  navLinks.classList.toggle("menu-mobile");
+  navLinks.classList.toggle("menu-mobile-active");
 };
 
 navBurg.addEventListener("click", burgStyle);
