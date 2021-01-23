@@ -24,4 +24,23 @@
       }
     }
   }
+
+  &__bot {
+    position: absolute;
+    z-index: 1;
+    top: 90vh;
+    left: 0;
+
+    width: 100%;
+    text-align: center;
+
+    p {
+      color: $white;
+    }
+
+    img {
+      width: 1.5vw;
+      animation: arrowDown 0.75s ease-in-out infinite alternate both;
+    }
+  }
 }

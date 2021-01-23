@@ -31,6 +31,11 @@ li {
   margin: 0 7.5vw;
 }
 
+.pos-rel-1 {
+  position: relative;
+  z-index: 1;
+}
+
 // flex
 .flex {
   display: flex;
@@ -81,7 +86,7 @@ li {
   svg {
     width: 2.5vw;
     height: auto;
-    margin: 0 1vw;
+    margin-left: 1vw;
 
     path,
     circle {
@@ -90,7 +95,7 @@ li {
   }
 
   p {
-    padding-right: 1vw;
+    padding: 0 1vw;
     font-weight: 500;
     letter-spacing: 0.5vw;
     color: $white;
@@ -104,4 +109,21 @@ li {
       fill: $white;
     }
   }
+
+  &-ex {
+    background-color: $black;
+
+    &:hover {
+      background-color: $orange-hover;
+
+      svg path,
+      svg circle {
+        fill: $white;
+      }
+    }
+  }
+}
+
+.active-btn {
+  background-color: $orange-highlight;
 }

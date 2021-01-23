@@ -1,3 +1,25 @@
+@-webkit-keyframes arrowDown {
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  0% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+}
+
+@keyframes arrowDown {
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  0% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +52,11 @@ li {
 .container {
   height: 100%;
   margin: 0 7.5vw;
+}
+
+.pos-rel-1 {
+  position: relative;
+  z-index: 1;
 }
 
 .flex {
@@ -90,7 +117,7 @@ li {
 .btn svg {
   width: 2.5vw;
   height: auto;
-  margin: 0 1vw;
+  margin-left: 1vw;
 }
 
 .btn svg path,
@@ -100,7 +127,7 @@ li {
 }
 
 .btn p {
-  padding-right: 1vw;
+  padding: 0 1vw;
   font-weight: 500;
   letter-spacing: 0.5vw;
   color: #fafafa;
@@ -115,10 +142,27 @@ li {
   fill: #fafafa;
 }
 
+.btn-ex {
+  background-color: #0f0f0f;
+}
+
+.btn-ex:hover {
+  background-color: #ffa544;
+}
+
+.btn-ex:hover svg path,
+.btn-ex:hover svg circle {
+  fill: #fafafa;
+}
+
+.active-btn {
+  background-color: #ff8400;
+}
+
 .nav {
   background-color: #0f0f0f;
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 5%;
@@ -128,7 +172,7 @@ li {
 
 .nav__logo {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 5%;
@@ -177,12 +221,12 @@ li {
 }
 
 .nav__links li:hover p {
-  color: #b1e6ff;
+  color: #b5d9ff;
 }
 
 .nav__links li:hover svg path,
 .nav__links li:hover svg circle {
-  fill: #b1e6ff;
+  fill: #b5d9ff;
 }
 
 .nav__links .active-link p,
@@ -328,5 +372,44 @@ li {
 
 .header__top .buttons button {
   margin: 0 12.5px;
+}
+
+.header__bot {
+  position: absolute;
+  z-index: 1;
+  top: 90vh;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.header__bot p {
+  color: #fafafa;
+}
+
+.header__bot img {
+  width: 1.5vw;
+  -webkit-animation: arrowDown 0.75s ease-in-out infinite alternate both;
+          animation: arrowDown 0.75s ease-in-out infinite alternate both;
+}
+
+.projects {
+  background-color: #0f0f0f;
+  width: 100vw;
+  height: 100vh;
+}
+
+.projects h2 {
+  width: 25%;
+  border-bottom: 5px solid #fafafa;
+  color: #fafafa;
+}
+
+.section-bg {
+  position: absolute;
+  z-index: 0;
+  top: 60vh;
+  width: 100vw;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */

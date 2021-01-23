@@ -1,0 +1,25 @@
+.projects {
+  background-color: $black;
+
+  width: 100vw;
+  height: 100vh;
+
+  h2 {
+    width: 25%;
+
+    border-bottom: 5px solid $white;
+
+    color: $white;
+  }
+
+  &__exs {
+  }
+}
+
+.section-bg {
+  position: absolute;
+  z-index: 0;
+  top: 60vh;
+  width: 100vw;
+  height: auto;
+}
