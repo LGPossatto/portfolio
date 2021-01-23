@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/svgs/favicon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="/icons/favicon.svg" type="image/x-icon" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/css/style.css" />
@@ -13,11 +13,11 @@
   </head>
   <body>
     <nav class="nav">
-      <img class="nav__logo" src="/svgs/logo.svg" alt="logo" />
+      <img class="nav__logo" src="/icons/logo.svg" alt="logo" />
       <img
         class="nav__arrow"
         id="nav-arrow"
-        src="/svgs/arrow.svg"
+        src="/icons/arrow-l.svg"
         alt="arrow"
       />
       <div class="nav__burg flex flex-fdc flex-jcc" id="nav-burg">
@@ -76,31 +76,49 @@
       </ul>
     </nav>
 
-    <div class="container">
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-      <h1>A</h1>
-    </div>
+    <section class="header">
+      <div class="container">
+        <div class="header__top flex flex-fdc flex-aic">
+          <h1 class="fs-big">
+            Olá, me chamo Luiz Gustavo <br />e sou um desenvolvedor web frontend
+          </h1>
+          <div class="buttons flex">
+            <button type="button" class="btn flex flex-jcc flex-aic">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.2737 36.7358C19.2737 37.7358 19 38.5 19 40.0001C17.8049 40.659 16.5 41.5 14.2496 40.5806C11.9992 39.6611 10.7607 36.3255 9.74958 36.0806C8.578 35.0248 6 35.5 7 36.5C11.2695 38.7921 9.20018 41.8571 13 43.5C15.6153 44.6307 17.7861 44.263 18.5067 44.0469C18.5045 44.0313 18.5022 44.0157 18.5 44C18.862 43.8823 18.8331 43.949 18.5067 44.0469C19.1403 48.4768 19.2915 49.9084 17 49.5001C5 45.5 -7.62939e-06 34.0002 -3.8147e-06 25.0001C0 16 7.76054 0.5 25 0.5C42.2395 0.5 50 15 50 25.0001C50 35.0002 45.5 44.5 33 49.5001C30.2029 50.3176 30.6016 46.3586 31 40.0001C30.9309 38.4876 30.5378 37.6096 29.5 36.7358C33.2166 36.2888 33 36.5 37 34C41 31.5 42.8674 24.9068 38.5 17.5001C39.3597 14.3128 38.0533 11.2352 38 11C37.9467 10.7648 35.4944 10.7762 31 13.5001C26.543 12.5869 23.9707 12.3391 19 13.5001C15.6344 11.5893 13.9827 10.8667 12 11C10.8223 13.3841 10.9878 14.8505 11.5 17.5001C6.67717 23.5826 9.6452 32.0177 13 34C16.3548 35.9823 17.5175 36.2655 20.2737 36.7358Z"
+                  fill="#007CFF"
+                />
+              </svg>
+              <p class="fs-small">GitHub</p>
+            </button>
+            <button type="button" class="btn flex flex-jcc flex-aic">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M11 15.9999H0V49.9999H11V15.9999Z" fill="#007CFF" />
+                <path
+                  d="M26.5 15.9999H16V49.9999H26.5V31.4999C26.5 29 39 20 39 27.9999V49.9999H50V25.9999C50 14.5 34.9464 11.4007 26.5 21.9999V15.9999Z"
+                  fill="#007CFF"
+                />
+                <circle cx="5.5" cy="5.5" r="5.5" fill="#007CFF" />
+              </svg>
+              <p class="fs-small">LinkedIn</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script src="/js/main.js"></script>
   </body>

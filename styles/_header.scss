@@ -1,0 +1,27 @@
+.header {
+  background-color: $black;
+
+  width: 100vw;
+  height: 100vh;
+
+  &__top {
+    width: 100%;
+
+    h1 {
+      width: 80%;
+      padding-top: 30vh;
+      border-bottom: 5px solid $white;
+
+      text-align: center;
+      color: $white;
+    }
+
+    .buttons {
+      margin: 25px 0;
+
+      button {
+        margin: 0 12.5px;
+      }
+    }
+  }
+}

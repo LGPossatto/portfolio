@@ -27,6 +27,7 @@ li {
 }
 
 .container {
+  height: 100%;
   margin: 0 7.5vw;
 }
 
@@ -53,4 +54,54 @@ li {
 
 .flex-jcse {
   justify-content: space-evenly;
+}
+
+// font
+.fs {
+  &-big {
+    font-size: 2.5vw;
+  }
+
+  &-small {
+    font-size: 1.25vw;
+  }
+}
+
+// buttons
+.btn {
+  cursor: pointer;
+  background-color: $orange-highlight;
+  padding: 1vw 0;
+
+  border: none;
+  border-radius: 0.5vw;
+
+  transition: background-color 0.25s ease-in-out;
+
+  svg {
+    width: 2.5vw;
+    height: auto;
+    margin: 0 1vw;
+
+    path,
+    circle {
+      transition: fill 0.25s ease-in-out;
+    }
+  }
+
+  p {
+    padding-right: 1vw;
+    font-weight: 500;
+    letter-spacing: 0.5vw;
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $blue-highlight;
+
+    svg path,
+    svg circle {
+      fill: $white;
+    }
+  }
 }

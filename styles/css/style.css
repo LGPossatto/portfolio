@@ -4,7 +4,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  color: #101010;
+  color: #0f0f0f;
 }
 
 html,
@@ -28,6 +28,7 @@ li {
 }
 
 .container {
+  height: 100%;
   margin: 0 7.5vw;
 }
 
@@ -68,8 +69,54 @@ li {
           justify-content: space-evenly;
 }
 
+.fs-big {
+  font-size: 2.5vw;
+}
+
+.fs-small {
+  font-size: 1.25vw;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #ff8400;
+  padding: 1vw 0;
+  border: none;
+  border-radius: 0.5vw;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.btn svg {
+  width: 2.5vw;
+  height: auto;
+  margin: 0 1vw;
+}
+
+.btn svg path,
+.btn svg circle {
+  -webkit-transition: fill 0.25s ease-in-out;
+  transition: fill 0.25s ease-in-out;
+}
+
+.btn p {
+  padding-right: 1vw;
+  font-weight: 500;
+  letter-spacing: 0.5vw;
+  color: #fafafa;
+}
+
+.btn:hover {
+  background-color: #007cff;
+}
+
+.btn:hover svg path,
+.btn:hover svg circle {
+  fill: #fafafa;
+}
+
 .nav {
-  background-color: #101010;
+  background-color: #0f0f0f;
   position: fixed;
   z-index: 0;
   top: 0;
@@ -89,7 +136,7 @@ li {
 }
 
 .nav__arrow {
-  width: 1vw;
+  width: 1.5vw;
   height: auto;
   opacity: 0;
   -webkit-transition: opacity 0.25s step-end, -webkit-transform 0.25s ease-in-out;
@@ -101,6 +148,10 @@ li {
 .nav__links {
   width: 100%;
   height: 100vh;
+}
+
+.nav__links li {
+  cursor: pointer;
 }
 
 .nav__links li p {
@@ -125,29 +176,25 @@ li {
   transition: fill 0.25s ease-in-out;
 }
 
-.nav__links li:hover {
-  cursor: pointer;
-}
-
 .nav__links li:hover p {
-  color: #85e3ff;
+  color: #b1e6ff;
 }
 
 .nav__links li:hover svg path,
 .nav__links li:hover svg circle {
-  fill: #85e3ff;
+  fill: #b1e6ff;
 }
 
 .nav__links .active-link p,
 .nav__links .active-link:hover p {
-  color: #00c2ff;
+  color: #007cff;
 }
 
 .nav__links .active-link svg path,
 .nav__links .active-link svg circle,
 .nav__links .active-link:hover svg path,
 .nav__links .active-link:hover svg circle {
-  fill: #00c2ff;
+  fill: #007cff;
 }
 
 .nav__burg {
@@ -189,7 +236,7 @@ li {
     display: none;
   }
   .nav__links {
-    background-color: #101010;
+    background-color: #0f0f0f;
     width: 100vw;
     height: 0;
     -webkit-box-pack: left;
@@ -238,7 +285,7 @@ li {
 }
 
 .burg-animation span {
-  background-color: #00c2ff;
+  background-color: #007cff;
 }
 
 .burg-animation :first-child {
@@ -255,5 +302,31 @@ li {
 .burg-animation :last-child {
   -webkit-transform: rotate(-135deg) translate(6px, 7px);
           transform: rotate(-135deg) translate(6px, 7px);
+}
+
+.header {
+  background-color: #0f0f0f;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header__top {
+  width: 100%;
+}
+
+.header__top h1 {
+  width: 80%;
+  padding-top: 30vh;
+  border-bottom: 5px solid #fafafa;
+  text-align: center;
+  color: #fafafa;
+}
+
+.header__top .buttons {
+  margin: 25px 0;
+}
+
+.header__top .buttons button {
+  margin: 0 12.5px;
 }
 /*# sourceMappingURL=style.css.map */

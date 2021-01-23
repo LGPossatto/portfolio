@@ -20,7 +20,7 @@
   }
 
   &__arrow {
-    width: 1vw;
+    width: 1.5vw;
     height: auto;
     opacity: 0;
     transition: transform 0.25s ease-in-out, opacity 0.25s step-end;
@@ -31,6 +31,8 @@
     height: 100vh;
 
     li {
+      cursor: pointer;
+
       p {
         display: none;
 
@@ -56,8 +58,6 @@
       }
 
       &:hover {
-        cursor: pointer;
-
         p {
           color: $blue-hover;
         }

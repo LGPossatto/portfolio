@@ -15,15 +15,17 @@ const linkStyle = (e) => {
   const elementTag = e.target.parentElement.tagName;
   const childrenList = navLinks.children;
 
-  for (let child of childrenList) {
-    child.classList.remove("active-link");
-  }
-
-  let elementLink = navLinks.firstElementChild;
+  let elementLink = "";
   if (elementTag === "svg") {
     elementLink = e.target.parentElement.parentElement;
   } else if (elementTag === "LI") {
     elementLink = e.target.parentElement;
+  } else {
+    return null;
+  }
+
+  for (let child of childrenList) {
+    child.classList.remove("active-link");
   }
 
   elementLink.classList.add("active-link");
@@ -46,7 +48,8 @@ navLinks.addEventListener("click", (e) => {
 
 // move arrow to it's place
 setTimeout(() => {
-  navLinks.click();
+  navLinks.firstElementChild.classList.add("active-link");
+  arrowStyle(navLinks.firstElementChild);
   navArrow.style.opacity = "1";
 }, 500);
 
