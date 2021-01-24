@@ -9,12 +9,14 @@
 html,
 body {
   background-color: $white;
+  overflow-x: hidden;
   width: 100vw;
   height: 100vh;
   /* overflow: hidden; */
 }
 
 body {
+  position: relative;
   font-size: 62.5%;
 }
 
@@ -28,7 +30,7 @@ li {
 
 .container {
   height: 100%;
-  margin: 0 7.5vw;
+  margin: 0 2.5vw 0 7.5vw;
 }
 
 .pos-rel-1 {
@@ -67,8 +69,16 @@ li {
     font-size: 2.5vw;
   }
 
+  &-med {
+    font-size: 1.75vw;
+  }
+
   &-small {
     font-size: 1.25vw;
+  }
+
+  &-smaller {
+    font-size: 1vw;
   }
 }
 
