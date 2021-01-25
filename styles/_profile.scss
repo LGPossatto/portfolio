@@ -1,0 +1,47 @@
+.profile {
+  background-color: $black;
+
+  width: 100vw;
+  height: 100vh;
+
+  .cards {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__card-data {
+    background-color: $white;
+    width: 33%;
+    height: 80%;
+    margin-top: 5%;
+    padding: 1vh 1vw;
+    border-radius: 1vw;
+  }
+
+  .data-link {
+    width: 100%;
+    height: 10%;
+
+    img {
+      height: 50%;
+    }
+
+    p {
+      margin-left: 1vw;
+
+      a {
+        color: $blue-darker;
+      }
+    }
+  }
+
+  .w-40 {
+    height: 40%;
+  }
+
+  .more-margin-top-p {
+    p {
+      margin-top: 1vh;
+    }
+  }
+}

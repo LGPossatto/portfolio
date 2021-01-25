@@ -4,14 +4,6 @@
   width: 100vw;
   height: 100vh;
 
-  h2 {
-    width: 25%;
-
-    border-bottom: 5px solid $white;
-
-    color: $white;
-  }
-
   &__exs {
   }
 
@@ -23,7 +15,6 @@
     border-radius: 1vw;
 
     .pannel-img {
-      background-color: rebeccapurple;
       width: 33%;
       height: 100%;
       padding: 1vh 1vw;
@@ -59,7 +50,6 @@
     }
 
     .pannel-name {
-      background-color: royalblue;
       width: 33%;
       height: 100%;
       padding: 1vh 1vw;
@@ -73,7 +63,6 @@
     }
 
     .pannel-side {
-      background-color: seagreen;
       width: 33%;
       height: 100%;
       padding: 1vh 1vw;

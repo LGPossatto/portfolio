@@ -114,6 +114,12 @@ li {
   font-size: 1vw;
 }
 
+.section-title {
+  width: 25%;
+  border-bottom: 5px solid #fafafa;
+  color: #fafafa;
+}
+
 .btn {
   cursor: pointer;
   background-color: #ff8400;
@@ -409,12 +415,6 @@ li {
   height: 100vh;
 }
 
-.projects h2 {
-  width: 25%;
-  border-bottom: 5px solid #fafafa;
-  color: #fafafa;
-}
-
 .projects__pannel {
   background-color: #fafafa;
   width: 100%;
@@ -424,7 +424,6 @@ li {
 }
 
 .projects__pannel .pannel-img {
-  background-color: rebeccapurple;
   width: 33%;
   height: 100%;
   padding: 1vh 1vw;
@@ -458,7 +457,6 @@ li {
 }
 
 .projects__pannel .pannel-name {
-  background-color: royalblue;
   width: 33%;
   height: 100%;
   padding: 1vh 1vw;
@@ -471,7 +469,6 @@ li {
 }
 
 .projects__pannel .pannel-side {
-  background-color: seagreen;
   width: 33%;
   height: 100%;
   padding: 1vh 1vw;
@@ -506,5 +503,50 @@ li {
   top: 60vh;
   width: 100vw;
   height: auto;
+}
+
+.profile {
+  background-color: #0f0f0f;
+  width: 100vw;
+  height: 100vh;
+}
+
+.profile .cards {
+  width: 100%;
+  height: 100%;
+}
+
+.profile__card-data {
+  background-color: #fafafa;
+  width: 33%;
+  height: 80%;
+  margin-top: 5%;
+  padding: 1vh 1vw;
+  border-radius: 1vw;
+}
+
+.profile .data-link {
+  width: 100%;
+  height: 10%;
+}
+
+.profile .data-link img {
+  height: 50%;
+}
+
+.profile .data-link p {
+  margin-left: 1vw;
+}
+
+.profile .data-link p a {
+  color: #0040ff;
+}
+
+.profile .w-40 {
+  height: 40%;
+}
+
+.profile .more-margin-top-p p {
+  margin-top: 1vh;
 }
 /*# sourceMappingURL=style.css.map */

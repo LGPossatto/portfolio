@@ -82,6 +82,12 @@ li {
   }
 }
 
+.section-title {
+  width: 25%;
+  border-bottom: 5px solid $white;
+  color: $white;
+}
+
 // buttons
 .btn {
   cursor: pointer;
