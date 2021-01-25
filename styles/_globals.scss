@@ -8,7 +8,7 @@
 
 html,
 body {
-  background-color: $white;
+  background-color: $black;
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
@@ -47,8 +47,16 @@ li {
   flex-direction: column;
 }
 
+.flex-fww {
+  flex-wrap: wrap;
+}
+
 .flex-aic {
   align-items: center;
+}
+
+.flex-ais {
+  align-items: flex-start;
 }
 
 .flex-jcc {
@@ -82,9 +90,26 @@ li {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .fs {
+    &-big {
+      font-size: 3.5vw;
+    }
+
+    &-med {
+      font-size: 3.25vw;
+    }
+
+    &-small {
+      font-size: 2.5vw;
+    }
+  }
+}
+
 .section-title {
   width: 25%;
-  border-bottom: 5px solid $white;
+  margin: 1vh 1vw;
+  border-bottom: 2px solid $white;
   color: $white;
 }
 

@@ -3,17 +3,12 @@
 
   width: 100vw;
   height: 100vh;
-
-  .cards {
-    width: 100%;
-    height: 100%;
-  }
+  margin-top: 5vh;
 
   &__card-data {
     background-color: $white;
     width: 33%;
-    height: 80%;
-    margin-top: 5%;
+    height: auto;
     padding: 1vh 1vw;
     border-radius: 1vw;
   }
@@ -23,7 +18,8 @@
     height: 10%;
 
     img {
-      height: 50%;
+      width: 10%;
+      margin: 1vh 0;
     }
 
     p {
@@ -36,12 +32,56 @@
   }
 
   .w-40 {
-    height: 40%;
+    margin-bottom: 7.5%;
   }
 
   .more-margin-top-p {
     p {
       margin-top: 1vh;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    min-height: 350px;
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .profile {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile {
+    height: auto;
+
+    &__card-data {
+      min-width: 250px;
+      width: 100%;
+      margin: 1vh 1vw;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .data-link {
+      margin: 1vh;
+      img {
+        width: 10%;
+      }
+    }
+
+    .name-box,
+    .data-box,
+    .education-box,
+    .courses-box,
+    .about-box,
+    .exp-p-box {
+      width: 100%;
     }
   }
 }

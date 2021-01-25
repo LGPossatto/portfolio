@@ -31,7 +31,7 @@
 
 html,
 body {
-  background-color: #fafafa;
+  background-color: #0f0f0f;
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
@@ -74,10 +74,21 @@ li {
           flex-direction: column;
 }
 
+.flex-fww {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .flex-aic {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.flex-ais {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .flex-jcc {
@@ -114,9 +125,22 @@ li {
   font-size: 1vw;
 }
 
+@media screen and (max-width: 500px) {
+  .fs-big {
+    font-size: 3.5vw;
+  }
+  .fs-med {
+    font-size: 3.25vw;
+  }
+  .fs-small {
+    font-size: 2.5vw;
+  }
+}
+
 .section-title {
   width: 25%;
-  border-bottom: 5px solid #fafafa;
+  margin: 1vh 1vw;
+  border-bottom: 2px solid #fafafa;
   color: #fafafa;
 }
 
@@ -178,7 +202,7 @@ li {
 .nav {
   background-color: #0f0f0f;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 5%;
@@ -188,7 +212,7 @@ li {
 
 .nav__logo {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 5%;
@@ -377,7 +401,7 @@ li {
 .header__top h1 {
   width: 80%;
   padding-top: 30vh;
-  border-bottom: 5px solid #fafafa;
+  border-bottom: 2px solid #fafafa;
   text-align: center;
   color: #fafafa;
 }
@@ -418,7 +442,7 @@ li {
 .projects__pannel {
   background-color: #fafafa;
   width: 100%;
-  height: 80%;
+  height: auto;
   padding: 1vh 1vw;
   border-radius: 1vw;
 }
@@ -505,22 +529,52 @@ li {
   height: auto;
 }
 
+@media screen and (max-width: 768px) {
+  .projects {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .projects {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .projects {
+    height: auto;
+  }
+  .projects .projects__exs {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .projects .projects__exs button {
+    margin: 1%;
+  }
+  .projects__pannel {
+    margin-top: 1vh;
+  }
+  .projects .pannel-img,
+  .projects .pannel-name,
+  .projects .pannel-side {
+    min-width: 250px;
+    width: 100%;
+    margin: 1vh 1vw;
+  }
+}
+
 .profile {
   background-color: #0f0f0f;
   width: 100vw;
   height: 100vh;
-}
-
-.profile .cards {
-  width: 100%;
-  height: 100%;
+  margin-top: 5vh;
 }
 
 .profile__card-data {
   background-color: #fafafa;
   width: 33%;
-  height: 80%;
-  margin-top: 5%;
+  height: auto;
   padding: 1vh 1vw;
   border-radius: 1vw;
 }
@@ -531,7 +585,8 @@ li {
 }
 
 .profile .data-link img {
-  height: 50%;
+  width: 10%;
+  margin: 1vh 0;
 }
 
 .profile .data-link p {
@@ -543,10 +598,55 @@ li {
 }
 
 .profile .w-40 {
-  height: 40%;
+  margin-bottom: 7.5%;
 }
 
 .profile .more-margin-top-p p {
   margin-top: 1vh;
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    min-height: 350px;
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .profile {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile {
+    height: auto;
+  }
+  .profile__card-data {
+    min-width: 250px;
+    width: 100%;
+    margin: 1vh 1vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .profile .data-link {
+    margin: 1vh;
+  }
+  .profile .data-link img {
+    width: 10%;
+  }
+  .profile .name-box,
+  .profile .data-box,
+  .profile .education-box,
+  .profile .courses-box,
+  .profile .about-box,
+  .profile .exp-p-box {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
