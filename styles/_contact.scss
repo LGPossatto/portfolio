@@ -1,0 +1,49 @@
+.contact {
+  background-image: linear-gradient(to top right, $blue-light, $blue-darker);
+
+  width: 100vw;
+  height: auto;
+  margin-top: 5vh;
+
+  &__form,
+  &__links {
+    width: 50%;
+    height: 100%;
+  }
+
+  &__form {
+    h2 {
+      margin-bottom: 2vh;
+      width: 75%;
+    }
+
+    label {
+      font-weight: 500;
+      color: $white;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1vh 1vw;
+      margin: 1vh 0 2vh;
+
+      border: none;
+      border-radius: 1vw;
+
+      &:focus {
+        box-shadow: 0 0 3px 2px $blue-hover;
+      }
+    }
+
+    .btn-form {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 2vh;
+    }
+  }
+
+  &__links {
+  }
+}

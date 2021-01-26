@@ -139,7 +139,7 @@ li {
 
 .section-title {
   width: 25%;
-  margin: 1vh 1vw;
+  margin: 1vh 0;
   border-bottom: 2px solid #fafafa;
   color: #fafafa;
 }
@@ -648,5 +648,51 @@ li {
   .profile .exp-p-box {
     width: 100%;
   }
+}
+
+.contact {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#00c2ff), to(#0040ff));
+  background-image: linear-gradient(to top right, #00c2ff, #0040ff);
+  width: 100vw;
+  height: auto;
+  margin-top: 5vh;
+}
+
+.contact__form, .contact__links {
+  width: 50%;
+  height: 100%;
+}
+
+.contact__form h2 {
+  margin-bottom: 2vh;
+  width: 75%;
+}
+
+.contact__form label {
+  font-weight: 500;
+  color: #fafafa;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 1vh 1vw;
+  margin: 1vh 0 2vh;
+  border: none;
+  border-radius: 1vw;
+}
+
+.contact__form input:focus,
+.contact__form textarea:focus {
+  -webkit-box-shadow: 0 0 3px 2px #b5d9ff;
+          box-shadow: 0 0 3px 2px #b5d9ff;
+}
+
+.contact__form .btn-form {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-bottom: 2vh;
 }
 /*# sourceMappingURL=style.css.map */
