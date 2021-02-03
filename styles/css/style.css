@@ -166,7 +166,8 @@ li {
   transition: fill 0.25s ease-in-out;
 }
 
-.btn p {
+.btn p,
+.btn a {
   padding: 0 1vw;
   font-weight: 500;
   letter-spacing: 0.5vw;
@@ -454,7 +455,11 @@ li {
   text-align: center;
 }
 
-.projects__pannel .pannel-img img {
+.projects__pannel .pannel-img .img-box {
+  width: 100%;
+}
+
+.projects__pannel .pannel-img .img-box img {
   width: 100%;
 }
 
@@ -517,7 +522,7 @@ li {
   padding: 10%;
 }
 
-.projects__pannel .pannel-side .cta button {
+.projects__pannel .pannel-side .cta a {
   margin: 1vh 1vw;
 }
 

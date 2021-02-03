@@ -1,6 +1,20 @@
 // ------------------------------------------------------------------
 // navbar link ------------------------------------------------------
+const navLinks = document.querySelector("#nav-links");
 const navArrow = document.querySelector("#nav-arrow");
+
+const addWindowEvent = (elementLink) => {
+  window.addEventListener("resize", () => {
+    arrowStyle(elementLink);
+
+    if (window.innerWidth > 768) {
+      navLinks.classList.add("menu-mobile-aux");
+    } else if (window.innerWidth < 768) {
+      navLinks.classList.remove("menu-mobile-aux");
+    }
+  });
+};
+
 const arrowStyle = (elementLink) => {
   const elementBound = elementLink.getBoundingClientRect();
   const styleTop =
@@ -10,7 +24,12 @@ const arrowStyle = (elementLink) => {
   navArrow.style.transform = `translate(${styleLeft}px, ${styleTop}px)`;
 };
 
-const navLinks = document.querySelector("#nav-links");
+const setupArrow = (elementLink) => {
+  elementLink.classList.add("active-link");
+  arrowStyle(elementLink);
+  addWindowEvent(elementLink);
+};
+
 const linkStyle = (e) => {
   const elementTag = e.target.parentElement.tagName;
   const childrenList = navLinks.children;
@@ -28,18 +47,7 @@ const linkStyle = (e) => {
     child.classList.remove("active-link");
   }
 
-  elementLink.classList.add("active-link");
-  arrowStyle(elementLink);
-
-  window.addEventListener("resize", () => {
-    arrowStyle(elementLink);
-
-    if (window.innerWidth > 768) {
-      navLinks.classList.add("menu-mobile-aux");
-    } else if (window.innerWidth < 768) {
-      navLinks.classList.remove("menu-mobile-aux");
-    }
-  });
+  setupArrow(elementLink);
 };
 
 navLinks.addEventListener("click", (e) => {
@@ -48,8 +56,7 @@ navLinks.addEventListener("click", (e) => {
 
 // move arrow to it's place
 setTimeout(() => {
-  navLinks.firstElementChild.classList.add("active-link");
-  arrowStyle(navLinks.firstElementChild);
+  setupArrow(navLinks.firstElementChild);
   navArrow.style.opacity = "1";
 }, 500);
 
@@ -64,4 +71,163 @@ const burgStyle = () => {
 
 navBurg.addEventListener("click", burgStyle);
 
+// ------------------------------------------------------------------
+// projects section -------------------------------------------------
+const info = [
+  {
+    id: 0,
+    name: "API-project",
+    about:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam purus neque, tincidunt vel varius in, placerat quis ligula. Integer purus nibh, fermentum vel gravida vel, aliquet sit amet velit.",
+    tec: [
+      {
+        name: "html 5",
+        key: 0,
+      },
+      {
+        name: "css 3",
+        key: 1,
+      },
+      {
+        name: "javascript",
+        key: 2,
+      },
+      {
+        name: "sass",
+        key: 3,
+      },
+      {
+        name: "api",
+        key: 4,
+      },
+    ],
+    images: ["/images/weather-map-0.jpg", "/images/weather-map-1.jpg"],
+    gitlink: "test",
+    sitelink: "test",
+  },
+  {
+    id: 1,
+    name: "Exemplo Nome",
+    about:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam purus neque, tincidunt vel varius in, placerat quis ligula. Integer purus nibh, fermentum vel gravida vel, aliquet sit amet velit. Cras luctus bibendum sapien vel sollicitudin. Vestibulum magna lectus, fermentum sed justo non, suscipit vulputate felis. Mauris tempor hendrerit varius. Nunc in elit sit amet neque viverra varius vitae nec enim. Sed facilisis mi quis felis porttitor, a ultricies massa auctor. Aenean sodales dui id odio euismod, vitae pellentesque eros blandit. Nulla aliquet augue efficitur scelerisque tristique. In hac habitasse platea dictumst. Donec nec tortor posuere, tincidunt magna sit amet, placerat lacus. ",
+    tec: [
+      {
+        name: "test",
+        key: 1,
+      },
+      {
+        name: "test",
+        key: 1,
+      },
+    ],
+    images: ["/images/weather-map-0.jpg", "/images/weather-map-1.jpg"],
+    gitlink: "test",
+    sitelink: "test",
+  },
+];
+
+const projectsExs = document.querySelector("#projects-exs");
+const projectImg = document.querySelector("#project-img");
+const pannelName = document.querySelector("#pannel-name");
+const tecIcons = document.querySelector("#tec-icons");
+const ctaLinks = document.querySelector("cta-links");
+
+// btn specific
+const unselectBtn = () => {
+  for (let item of projectsExs.children) {
+    item.classList.remove("active-btn");
+  }
+};
+
+const changeExBtn = (btn) => {
+  unselectBtn();
+  btn.classList.add("active-btn");
+};
+
+const createExBtn = (newBtn, name, id) => {
+  newBtn.classList = "btn btn-ex";
+
+  const newP = document.createElement("p");
+  newP.classList = "fs-small";
+  newP.textContent = name;
+
+  newBtn.appendChild(newP);
+  newBtn.dataset.id = id;
+  projectsExs.appendChild(newBtn);
+};
+
+// pannel section
+// image specific
+const changeExImg = (images, name) => {
+  projectImg.src = images[0];
+  projectImg.alt = name;
+};
+
+// name specific
+const changeExNameAbout = (name, about) => {
+  pannelName.firstElementChild.textContent = name;
+  pannelName.lastElementChild.textContent = about;
+};
+
+// tec/links specific
+// tec
+const selectTec = (key) => {
+  switch (key) {
+    case 0:
+      return "/icons/tec-html-5.svg";
+    case 1:
+      return "/icons/tec-css-3.svg";
+    case 2:
+      return "/icons/tec-javascript.svg";
+    case 3:
+      return "/icons/tec-sass.svg";
+    case 4:
+      return "/icons/tec-api.png";
+    default:
+      return "/icons/au-not-found.svg";
+  }
+};
+
+const createTec = (name, key) => {
+  const newImg = document.createElement("img");
+  newImg.src = selectTec(key);
+  newImg.alt = name;
+  tecIcons.appendChild(newImg);
+};
+
+const changeExTec = (tec) => {
+  tecIcons.innerHTML = "";
+  for (let item of tec) {
+    const { name, key } = item;
+    createTec(name, key);
+  }
+};
+
+// links
+const changeExLinks = (gitlink, sitelink) => {
+  ctaLinks.firstElementChild.href = gitlink;
+  ctaLinks.lastElementChild.href = sitelink;
+};
+
+// setup
+const setupProjects = (project) => {
+  const { id, name, about, images, tec, gitlink, sitelink } = project;
+
+  const newBtn = document.createElement("Button");
+  createExBtn(newBtn, name, id);
+
+  newBtn.addEventListener("click", () => {
+    changeExBtn(newBtn);
+    changeExImg(images, name);
+    changeExNameAbout(name, about);
+    changeExTec(tec);
+    changeExLinks(gitlink, sitelink);
+  });
+};
+
+for (let project of info) {
+  setupProjects(project);
+}
+
+projectsExs.firstElementChild.classList.add("active-btn");
 // ------------------------------------------------------------------

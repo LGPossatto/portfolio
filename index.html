@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/icons/favicon.svg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/icons/au-favicon.svg"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,700&display=swap"
       rel="stylesheet"
@@ -13,11 +17,11 @@
   </head>
   <body>
     <nav class="nav">
-      <img class="nav__logo" src="/icons/logo.svg" alt="logo" />
+      <img class="nav__logo" src="/icons/au-logo.svg" alt="logo" />
       <img
         class="nav__arrow"
         id="nav-arrow"
-        src="/icons/arrow-l.svg"
+        src="/icons/au-arrow-l.svg"
         alt="arrow"
       />
       <div class="nav__burg flex flex-fdc flex-jcc" id="nav-burg">
@@ -121,7 +125,7 @@
           <p class="fs-small">
             Explore os meus projetos e conheça mais sobre mim!
           </p>
-          <img src="/icons/arrow-d.svg" alt="arrow" />
+          <img src="/icons/au-arrow-d.svg" alt="arrow" />
         </div>
       </div>
     </section>
@@ -155,9 +159,12 @@
 
     <section class="projects">
       <div class="container flex flex-fdc flex-jcse">
-        <h2 class="fs-big section-title pos-rel-1">Projetos</h2>
-        <section class="projects__exs pos-rel-1 flex flex-jcse">
-          <button type="button" class="btn btn-ex active-btn">
+        <h2 class="section-title fs-big pos-rel-1">Projetos</h2>
+        <section
+          class="projects__exs pos-rel-1 flex flex-jcse"
+          id="projects-exs"
+        >
+          <button type="button" class="btn btn-ex">
             <p class="fs-small">Exemple 1</p>
           </button>
           <button type="button" class="btn btn-ex">
@@ -175,10 +182,13 @@
         </section>
         <div
           class="projects__pannel pos-rel-1 flex flex-fww flex-jcsb flex-aic"
+          id="projects-pannel"
         >
           <div class="pannel-img flex flex-fdc flex-jcsb">
-            <img src="/images/ex-img.png" alt="exemple image" />
-            <div class="img-change flex flex-jcc">
+            <div class="img-box">
+              <img src="" alt="" id="project-img" />
+            </div>
+            <div class="img-change flex flex-jcc" id="img-arrows">
               <svg
                 width="35"
                 height="37"
@@ -229,7 +239,7 @@
               </svg>
             </div>
           </div>
-          <div class="pannel-name">
+          <div class="pannel-name" id="pannel-name">
             <h3 class="fs-med">Exemplo Nome</h3>
             <p class="fs-small">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -249,15 +259,12 @@
           <div class="pannel-side">
             <div class="tec">
               <h4 class="fs-med">Tecnologias Utilizadas</h4>
-              <div class="tec__icons flex flex-jcc">
-                <img src="/icons/tec-html-5.svg" alt="html 5" />
-                <img src="/icons/tec-css-3.svg" alt="css 3" />
-                <img src="/icons/tec-javascript.svg" alt="java script" />
-                <img src="/icons/tec-sass.svg" alt="sass" />
+              <div class="tec__icons flex flex-jcc" id="tec-icons">
+                <!-- <img src="/icons/..." alt="..." /> -->
               </div>
             </div>
-            <div class="cta flex flex-fdc flex-jcc">
-              <button type="button" class="btn flex flex-jcc flex-aic">
+            <div class="cta flex flex-fdc flex-jcc" id="cta-links">
+              <a href="" class="btn flex flex-jcc flex-aic" target="_blank">
                 <svg
                   width="51"
                   height="42"
@@ -279,8 +286,8 @@
                   />
                 </svg>
                 <p class="fs-small">Código</p>
-              </button>
-              <button type="button" class="btn flex flex-jcc flex-aic">
+              </a>
+              <a href="" class="btn flex flex-jcc flex-aic" target="_blank">
                 <svg
                   width="50"
                   height="46"
@@ -310,7 +317,7 @@
                   />
                 </svg>
                 <p class="fs-small">Visitar</p>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -346,7 +353,7 @@
                 <p class="fs-small"><a href="">Luiz Gustavo Possatto</a></p>
               </div>
               <div class="data-link flex flex-aic">
-                <img src="/icons/doc.png" alt="github" />
+                <img src="/icons/soc-doc.png" alt="github" />
                 <p class="fs-small">
                   <a href="">currículo</a>
                 </p>

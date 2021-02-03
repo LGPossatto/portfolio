@@ -18,8 +18,12 @@
 
       text-align: center;
 
-      img {
+      .img-box {
         width: 100%;
+
+        img {
+          width: 100%;
+        }
       }
 
       .img-change {
@@ -84,7 +88,7 @@
         width: 100%;
         padding: 10%;
 
-        button {
+        a {
           margin: 1vh 1vw;
         }
       }
