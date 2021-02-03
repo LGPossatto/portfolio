@@ -130,7 +130,8 @@ const projectsExs = document.querySelector("#projects-exs");
 const projectImg = document.querySelector("#project-img");
 const pannelName = document.querySelector("#pannel-name");
 const tecIcons = document.querySelector("#tec-icons");
-const ctaLinks = document.querySelector("cta-links");
+const ctaLinks = document.querySelector("#cta-links");
+const imgArrows = document.querySelector("#img-arrows");
 
 // btn specific
 const unselectBtn = () => {
@@ -152,16 +153,33 @@ const createExBtn = (newBtn, name, id) => {
   newP.textContent = name;
 
   newBtn.appendChild(newP);
-  newBtn.dataset.id = id;
   projectsExs.appendChild(newBtn);
 };
 
 // pannel section
 // image specific
-const changeExImg = (images, name) => {
-  projectImg.src = images[0];
-  projectImg.alt = name;
+const changeExImg = (index) => {
+  const images = projectImg.dataset.images.split(",");
+  projectImg.src = images[index];
+  projectImg.dataset.index = index;
 };
+
+const moveImg = (direction) => {
+  const dir = direction === "right" ? 1 : -1;
+  const imgLength = info[parseInt(projectImg.dataset.id)].images.length - 1;
+  let index = parseInt(projectImg.dataset.index) + dir;
+
+  if (index < 0) {
+    index = imgLength;
+  } else if (index > imgLength) {
+    index = 0;
+  }
+
+  changeExImg(index);
+};
+
+imgArrows.firstElementChild.addEventListener("click", () => moveImg("left"));
+imgArrows.lastElementChild.addEventListener("click", () => moveImg("right"));
 
 // name specific
 const changeExNameAbout = (name, about) => {
@@ -214,20 +232,27 @@ const setupProjects = (project) => {
   const { id, name, about, images, tec, gitlink, sitelink } = project;
 
   const newBtn = document.createElement("Button");
-  createExBtn(newBtn, name, id);
+  createExBtn(newBtn, name);
+
+  projectImg.dataset.id = id;
+  projectImg.dataset.images = images;
+  projectImg.alt = name;
 
   newBtn.addEventListener("click", () => {
     changeExBtn(newBtn);
-    changeExImg(images, name);
+    changeExImg(0);
     changeExNameAbout(name, about);
     changeExTec(tec);
     changeExLinks(gitlink, sitelink);
   });
+
+  if (id === 0) {
+    newBtn.click();
+  }
 };
 
 for (let project of info) {
   setupProjects(project);
 }
 
-projectsExs.firstElementChild.classList.add("active-btn");
 // ------------------------------------------------------------------

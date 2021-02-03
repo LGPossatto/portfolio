@@ -45,5 +45,18 @@
   }
 
   &__links {
+    background-color: $white;
+    width: 50%;
+    height: 100%;
+    padding: 1rem;
+    margin: 1rem;
+
+    border-radius: 1vw;
+
+    p {
+      a {
+        color: $blue-darker;
+      }
+    }
   }
 }

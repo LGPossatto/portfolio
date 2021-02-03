@@ -700,4 +700,17 @@ li {
           transform: translateX(-50%);
   margin-bottom: 2vh;
 }
+
+.contact__links {
+  background-color: #fafafa;
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1vw;
+}
+
+.contact__links p a {
+  color: #0040ff;
+}
 /*# sourceMappingURL=style.css.map */
