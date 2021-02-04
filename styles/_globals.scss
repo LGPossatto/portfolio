@@ -15,6 +15,10 @@ body {
   /* overflow: hidden; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   font-size: 62.5%;
@@ -31,6 +35,13 @@ li {
 .container {
   height: 100%;
   margin: 0 2.5vw 0 7.5vw;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 100%;
+    margin: 0 5vw;
+  }
 }
 
 .pos-rel-1 {
@@ -125,6 +136,7 @@ li {
   transition: background-color 0.25s ease-in-out;
 
   svg {
+    min-width: 25px;
     width: 2.5vw;
     height: auto;
     margin-left: 1vw;

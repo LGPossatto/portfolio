@@ -33,39 +33,41 @@
     li {
       cursor: pointer;
 
-      p {
-        display: none;
-
-        font-size: 5vw;
-        line-height: 15vh;
-        color: $white;
-
-        transition: color 0.25s ease-in-out;
-      }
-
-      svg {
-        width: 100%;
-        height: auto;
-        padding: 1vw;
-      }
-
-      svg {
-        path,
-        circle {
-          fill: $white;
-          transition: fill 0.25s ease-in-out;
-        }
-      }
-
-      &:hover {
+      a {
         p {
-          color: $blue-hover;
+          display: none;
+
+          font-size: 4vw;
+          line-height: 15vh;
+          color: $white;
+
+          transition: color 0.25s ease-in-out;
+        }
+
+        svg {
+          width: 100%;
+          height: auto;
+          padding: 1vw;
         }
 
         svg {
           path,
           circle {
-            fill: $blue-hover;
+            fill: $white;
+            transition: fill 0.25s ease-in-out;
+          }
+        }
+
+        &:hover {
+          p {
+            color: $blue-hover;
+          }
+
+          svg {
+            path,
+            circle {
+              fill: $blue-hover;
+            }
           }
         }
       }
@@ -150,13 +152,18 @@
 
         transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 
-        p {
-          padding-left: 5vw;
-          display: block;
-        }
+        a {
+          display: flex;
+          align-items: center;
 
-        svg {
-          width: 15%;
+          p {
+            padding-left: 5vw;
+            display: inline-block;
+          }
+
+          svg {
+            width: calc(15px + 15%);
+          }
         }
       }
     }

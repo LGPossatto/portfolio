@@ -38,6 +38,10 @@ body {
   /* overflow: hidden; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   font-size: 62.5%;
@@ -54,6 +58,13 @@ li {
 .container {
   height: 100%;
   margin: 0 2.5vw 0 7.5vw;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 100%;
+    margin: 0 5vw;
+  }
 }
 
 .pos-rel-1 {
@@ -155,6 +166,7 @@ li {
 }
 
 .btn svg {
+  min-width: 25px;
   width: 2.5vw;
   height: auto;
   margin-left: 1vw;
@@ -239,34 +251,34 @@ li {
   cursor: pointer;
 }
 
-.nav__links li p {
+.nav__links li a p {
   display: none;
-  font-size: 5vw;
+  font-size: 4vw;
   line-height: 15vh;
   color: #fafafa;
   -webkit-transition: color 0.25s ease-in-out;
   transition: color 0.25s ease-in-out;
 }
 
-.nav__links li svg {
+.nav__links li a svg {
   width: 100%;
   height: auto;
   padding: 1vw;
 }
 
-.nav__links li svg path,
-.nav__links li svg circle {
+.nav__links li a svg path,
+.nav__links li a svg circle {
   fill: #fafafa;
   -webkit-transition: fill 0.25s ease-in-out;
   transition: fill 0.25s ease-in-out;
 }
 
-.nav__links li:hover p {
+.nav__links li a:hover p {
   color: #b5d9ff;
 }
 
-.nav__links li:hover svg path,
-.nav__links li:hover svg circle {
+.nav__links li a:hover svg path,
+.nav__links li a:hover svg circle {
   fill: #b5d9ff;
 }
 
@@ -345,12 +357,20 @@ li {
     -webkit-transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
   }
-  .nav__links li p {
-    padding-left: 5vw;
-    display: block;
+  .nav__links li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .nav__links li svg {
-    width: 15%;
+  .nav__links li a p {
+    padding-left: 5vw;
+    display: inline-block;
+  }
+  .nav__links li a svg {
+    width: calc(15px + 15%);
   }
   .nav__burg {
     display: -webkit-box;
@@ -411,7 +431,7 @@ li {
   margin: 25px 0;
 }
 
-.header__top .buttons button {
+.header__top .buttons a {
   margin: 0 12.5px;
 }
 
@@ -429,6 +449,7 @@ li {
 }
 
 .header__bot img {
+  min-width: 15px;
   width: 1.5vw;
   -webkit-animation: arrowDown 0.75s ease-in-out infinite alternate both;
           animation: arrowDown 0.75s ease-in-out infinite alternate both;
@@ -470,6 +491,7 @@ li {
 
 .projects__pannel .pannel-img .img-change svg {
   cursor: pointer;
+  min-width: 25px;
   width: 2.5vw;
   height: auto;
   margin: 1vh 1vw;
@@ -513,6 +535,7 @@ li {
 }
 
 .projects__pannel .pannel-side .tec__icons img {
+  min-width: 25px;
   width: 2.5vw;
   margin: 0 1vw;
 }
@@ -566,6 +589,15 @@ li {
     min-width: 250px;
     width: 100%;
     margin: 1vh 1vw;
+  }
+  .projects .pannel-img .img-box {
+    width: 100%;
+  }
+  .projects .pannel-img .img-box img {
+    width: 75%;
+  }
+  .projects .pannel-name {
+    text-align: center;
   }
 }
 
@@ -664,8 +696,10 @@ li {
 }
 
 .contact__form, .contact__links {
-  width: 50%;
+  min-width: 250px;
+  width: calc(50% - 2rem);
   height: 100%;
+  margin: 1rem;
 }
 
 .contact__form h2 {
@@ -703,14 +737,25 @@ li {
 
 .contact__links {
   background-color: #fafafa;
-  width: 50%;
-  height: 100%;
   padding: 1rem;
-  margin: 1rem;
   border-radius: 1vw;
 }
 
 .contact__links p a {
   color: #0040ff;
+}
+
+@media screen and (max-width: 627px) {
+  .contact :first-child {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact__form, .contact__links {
+    width: calc(100% - 2rem);
+  }
+  .contact__form .btn-form {
+    padding: 2vh 2vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */

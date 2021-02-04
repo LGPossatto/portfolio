@@ -36,9 +36,9 @@ const linkStyle = (e) => {
 
   let elementLink = "";
   if (elementTag === "svg") {
+    elementLink = e.target.parentElement.parentElement.parentElement;
+  } else if (elementTag === "A") {
     elementLink = e.target.parentElement.parentElement;
-  } else if (elementTag === "LI") {
-    elementLink = e.target.parentElement;
   } else {
     return null;
   }

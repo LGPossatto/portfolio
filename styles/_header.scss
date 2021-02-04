@@ -19,7 +19,7 @@
     .buttons {
       margin: 25px 0;
 
-      button {
+      a {
         margin: 0 12.5px;
       }
     }
@@ -39,6 +39,7 @@
     }
 
     img {
+      min-width: 15px;
       width: 1.5vw;
       animation: arrowDown 0.75s ease-in-out infinite alternate both;
     }
