@@ -3,10 +3,9 @@
 const navLinks = document.querySelector("#nav-links");
 const navArrow = document.querySelector("#nav-arrow");
 
-const addWindowEvent = (elementLink) => {
+const resizeWindowEvent = (elementLink) => {
   window.addEventListener("resize", () => {
     arrowStyle(elementLink);
-    //scrollArrow(document.body.scrollTop + (window.innerHeight / 2));
 
     if (window.innerWidth > 768) {
       navLinks.classList.add("menu-mobile-aux");
@@ -28,7 +27,7 @@ const arrowStyle = (elementLink) => {
 const setupArrow = (elementLink) => {
   elementLink.classList.add("active-link");
   arrowStyle(elementLink);
-  addWindowEvent(elementLink);
+  resizeWindowEvent(elementLink);
 };
 
 const linkStyle = (e) => {
@@ -40,6 +39,8 @@ const linkStyle = (e) => {
     elementLink = e.target.parentElement.parentElement.parentElement;
   } else if (elementTag === "A") {
     elementLink = e.target.parentElement.parentElement;
+  } else if (elementTag === "LI") {
+    elementLink = e.target.parentElement;
   } else {
     return null;
   }
@@ -61,19 +62,50 @@ setTimeout(() => {
   navArrow.style.opacity = "1";
 }, 500);
 
-const scrollArrow = (windowScreePos) => {
-  const headerH1 = document.querySelector("header-h1").getBoundingClientRect()
-    .offsetHeight;
-  const projectsH2 = document
-    .querySelector("projects-h2")
-    .getBoundingClientRect().offsetHeight;
-  const profileH2 = document.querySelector("profile-h2").getBoundingClientRect()
-    .offsetHeight;
-  const contactH2 = document.querySelector("contact-h2").getBoundingClientRect()
-    .offsetHeight;
+const scrollArrow = (windowScreenPos) => {
+  //const headerH1 = document.querySelector("#header-h1").getBoundingClientRect().top;
+  const projectsH2 =
+    document.querySelector("#projects-h2").getBoundingClientRect().top +
+    window.scrollY;
+  const profileH2 =
+    document.querySelector("#profile-h2").getBoundingClientRect().top +
+    window.scrollY;
+  const contactH2 =
+    document.querySelector("#contact-h2").getBoundingClientRect().top +
+    window.scrollY;
 
-  //if (profileH2 < windowScreePos || )
+  const handleLinkClick = (word) => {
+    const navLinkToClick = document.querySelector(`#nav-${word}-link`);
+    navLinkToClick.href = "#!";
+    navLinkToClick.click();
+    navLinkToClick.href = `#${word}`;
+  };
+
+  if (windowScreenPos < projectsH2) {
+    handleLinkClick("header");
+  } else if (projectsH2 <= windowScreenPos && windowScreenPos < profileH2) {
+    handleLinkClick("projects");
+  } else if (profileH2 <= windowScreenPos && windowScreenPos < contactH2) {
+    handleLinkClick("profile");
+  } else {
+    handleLinkClick("contact");
+  }
 };
+
+let lockScroll = false;
+window.addEventListener("scroll", () => {
+  if (!lockScroll) {
+    lockScroll = true;
+    let scrollHeight =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+    scrollArrow(scrollHeight + window.innerHeight / 2);
+  } else {
+    setTimeout(() => (lockScroll = false), 350);
+  }
+});
 
 // ------------------------------------------------------------------
 // navbar burg-menu -------------------------------------------------

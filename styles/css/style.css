@@ -34,7 +34,6 @@ body {
   background-color: #0f0f0f;
   overflow-x: hidden;
   width: 100vw;
-  height: 100vh;
   /* overflow: hidden; */
 }
 
@@ -713,6 +712,7 @@ li {
 
 .contact__form input,
 .contact__form textarea {
+  resize: none;
   width: 100%;
   padding: 1vh 1vw;
   margin: 1vh 0 2vh;
