@@ -253,7 +253,7 @@ li {
 
 .nav__links li a p {
   display: none;
-  font-size: 4vw;
+  font-size: 3.9vw;
   line-height: 15vh;
   color: #fafafa;
   -webkit-transition: color 0.25s ease-in-out;
@@ -412,6 +412,7 @@ li {
 .header {
   background-color: #0f0f0f;
   width: 100vw;
+  min-height: 350px;
   height: 100vh;
 }
 
@@ -458,7 +459,12 @@ li {
 .projects {
   background-color: #0f0f0f;
   width: 100vw;
-  height: 100vh;
+  min-height: 350px;
+  /* height: 100vh; */
+}
+
+.projects__exs button {
+  margin: 1%;
 }
 
 .projects__pannel {
@@ -557,7 +563,7 @@ li {
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .projects {
     height: 50vh;
   }
@@ -567,18 +573,14 @@ li {
   .projects {
     height: 350px;
   }
-}
-
-@media screen and (max-width: 500px) {
+} */
+@media screen and (max-width: 768px) {
   .projects {
     height: auto;
   }
-  .projects .projects__exs {
+  .projects__exs {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-  .projects .projects__exs button {
-    margin: 1%;
   }
   .projects__pannel {
     margin-top: 1vh;
@@ -604,7 +606,8 @@ li {
 .profile {
   background-color: #0f0f0f;
   width: 100vw;
-  height: 100vh;
+  min-height: 350px;
+  /* height: 100vh; */
   margin-top: 5vh;
 }
 
@@ -644,19 +647,6 @@ li {
 
 @media screen and (max-width: 768px) {
   .profile {
-    min-height: 350px;
-    height: 50vh;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .profile {
-    height: 350px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .profile {
     height: auto;
   }
   .profile__card-data {
@@ -672,10 +662,10 @@ li {
             flex-direction: column;
   }
   .profile .data-link {
-    margin: 1vh;
+    margin: 0.5vh;
   }
   .profile .data-link img {
-    width: 10%;
+    width: 5%;
   }
   .profile .name-box,
   .profile .data-box,
@@ -684,6 +674,15 @@ li {
   .profile .about-box,
   .profile .exp-p-box {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile .data-link {
+    margin: 1vh;
+  }
+  .profile .data-link img {
+    width: 10%;
   }
 }
 
@@ -745,6 +744,17 @@ li {
   color: #0040ff;
 }
 
+/* @media screen and (max-width: 768px) {
+  .contact {
+    height: 50vh;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact {
+    height: 350px;
+  }
+} */
 @media screen and (max-width: 627px) {
   .contact :first-child {
     -webkit-box-pack: center;

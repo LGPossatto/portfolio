@@ -6,10 +6,11 @@ const navArrow = document.querySelector("#nav-arrow");
 const addWindowEvent = (elementLink) => {
   window.addEventListener("resize", () => {
     arrowStyle(elementLink);
+    //scrollArrow(document.body.scrollTop + (window.innerHeight / 2));
 
     if (window.innerWidth > 768) {
       navLinks.classList.add("menu-mobile-aux");
-    } else if (window.innerWidth < 768) {
+    } else if (window.innerWidth <= 768) {
       navLinks.classList.remove("menu-mobile-aux");
     }
   });
@@ -59,6 +60,20 @@ setTimeout(() => {
   setupArrow(navLinks.firstElementChild);
   navArrow.style.opacity = "1";
 }, 500);
+
+const scrollArrow = (windowScreePos) => {
+  const headerH1 = document.querySelector("header-h1").getBoundingClientRect()
+    .offsetHeight;
+  const projectsH2 = document
+    .querySelector("projects-h2")
+    .getBoundingClientRect().offsetHeight;
+  const profileH2 = document.querySelector("profile-h2").getBoundingClientRect()
+    .offsetHeight;
+  const contactH2 = document.querySelector("contact-h2").getBoundingClientRect()
+    .offsetHeight;
+
+  //if (profileH2 < windowScreePos || )
+};
 
 // ------------------------------------------------------------------
 // navbar burg-menu -------------------------------------------------
@@ -158,6 +173,14 @@ const createExBtn = (newBtn, name, id) => {
 
 // pannel section
 // image specific
+const fallback = (image) => {
+  image.onerror = null;
+  image.src = "/images/not-found-img.jpg";
+};
+projectImg.addEventListener("error", () => {
+  fallback(projectImg);
+});
+
 const changeExImg = (index) => {
   const images = projectImg.dataset.images.split(",");
   projectImg.src = images[index];
@@ -236,7 +259,7 @@ const setupProjects = (project) => {
 
   projectImg.dataset.id = id;
   projectImg.dataset.images = images;
-  projectImg.alt = name;
+  projectImg.alt = `Imagem Exemplo de ${name}`;
 
   newBtn.addEventListener("click", () => {
     changeExBtn(newBtn);

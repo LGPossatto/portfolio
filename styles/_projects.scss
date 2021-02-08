@@ -2,7 +2,14 @@
   background-color: $black;
 
   width: 100vw;
-  height: 100vh;
+  min-height: 350px;
+  /* height: 100vh; */
+
+  &__exs {
+    button {
+      margin: 1%;
+    }
+  }
 
   &__pannel {
     background-color: $white;
@@ -106,7 +113,7 @@
   height: auto;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .projects {
     height: 50vh;
   }
@@ -116,18 +123,14 @@
   .projects {
     height: 350px;
   }
-}
+} */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .projects {
     height: auto;
 
-    .projects__exs {
+    &__exs {
       flex-wrap: wrap;
-
-      button {
-        margin: 1%;
-      }
     }
 
     &__pannel {
