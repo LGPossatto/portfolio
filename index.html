@@ -426,38 +426,47 @@
 
     <section class="contact" id="contact">
       <div class="container flex flex-fww flex-jcsb flex-aic pos-rel-1">
-        <form action="" class="contact__form" id="contact-form">
+        <form
+          name="contact-form"
+          id="contact-form"
+          method="POST"
+          data-netlify="true"
+          class="contact__form"
+        >
           <h2 class="fs-big section-title" id="contact-h2">Entre em Contato</h2>
           <label class="fs-small" for="contact-name">Nome: </label>
           <input
-            type="text"
+            name="contact-name"
             id="contact-name"
+            type="text"
             placeholder="Seu Nome..."
             required
           />
           <label class="fs-small" for="contact-email">Email: </label>
           <input
-            type="text"
-            id="contact-name"
+            name="contact-email"
+            id="contact-email"
+            type="email"
             placeholder="Seu Email..."
             required
           />
           <label class="fs-small" for="contact-subject">Assunto: </label>
           <input
+            name="contact-subject"
+            id="contact-subject"
             type="text"
-            id="contact-name"
             placeholder="Assunto..."
             required
           />
-          <label class="fs-small" for="contact-form">Mensagem: </label>
+          <label class="fs-small" for="contact-message">Mensagem: </label>
           <textarea
-            name="contact-msg"
-            id="contact-form"
+            name="contact-message"
+            id="contact-message"
             placeholder="Sua mensagem..."
             rows="5"
             required
           ></textarea>
-          <button class="btn btn-form" type="submit">
+          <button type="submit" class="btn btn-form">
             <p class="fs-small">Enviar</p>
           </button>
         </form>

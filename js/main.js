@@ -377,3 +377,14 @@ for (let project of info) {
 }
 
 // ------------------------------------------------------------------
+// Handle Form Submit -----------------------------------------------
+/* const handleFormSubmit = (e) => {
+  e.preventDefault();
+
+  document.querySelector("#contact-name").value = "";
+  document.querySelector("#contact-email").value = "";
+  document.querySelector("#contact-subject").value = "";
+  document.querySelector("#contact-message").value = "";
+}; */
+
+// ------------------------------------------------------------------
