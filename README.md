@@ -1,4 +1,2 @@
-# portfolio
-My Portfolio
-
-### Link => https://luizgustavo.netlify.app
+# deprecated portfolio
+My first Portfolio
